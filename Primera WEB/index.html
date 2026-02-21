@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>LEGO FUTURE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
+<body>
+
+  <!-- ===== LÍNEA NEÓN SUPERIOR (BAÑO DE LUZ) ===== -->
+  <div class="neon-line"></div>
+
+  <!-- ===== PARTÍCULAS (GLOBAL) ===== -->
+  <div class="particles" aria-hidden="true"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="IMG/lego-logo-1.png" alt="LEGO" />
+    </div>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#categorias">Categorías</a></li>
+     <li><a href="#valores" id="openValues">Valores</a></li>
+      
+      <li><a href="#contacto" id="openContact">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1 id="heroTitle">Construye tu<br>propio universo</h1>
+      <p id="heroText">
+        Bienvenido a un lugar donde la realidad se encuentra con la imaginación ilimitada.
+        LEGO no es solo un juego de construcción; es la puerta de entrada a mundos
+        legendarios donde cada bloque es una pieza de tu propia historia. Desde la
+        precisión de la ingeniería hasta la magia de la fantasía pura, aquí cada
+        ladrillo es una oportunidad para redefinir lo imposible y dar vida a
+        aventuras que solo tú puedes imaginar.
+      </p>
+    
+    </div>
+
+    <div class="hero-image">
+      <img id="banner" src="IMG/Banner1.jpg" alt="LEGO Banner" />
+    </div>
+  </header>
+
+  <!-- ===== CATEGORIAS ===== -->
+  <section class="categorias" id="categorias">
+    <h2>Explora los mundos LEGO</h2>
+
+    <div class="grid">
+      <div class="card contain batman scale-batman" data-category="batman">
+        <img src="IMG/icono1.png" alt="Batman" />
+        <div class="overlay">
+          <h3>BATMAN</h3>
+          <p>“Yo soy la noche. Yo soy Batman.”</p>
+        </div>
+      </div>
+
+      <div class="card contain ninjago scale-ninjago" data-category="ninjago">
+        <img src="IMG/icono2.png" alt="Ninjago" />
+        <div class="overlay">
+          <h3>NINJAGO</h3>
+          <p>“Encuentra tu elemento.”</p>
+        </div>
+      </div>
+
+      <div class="card poster jurassic scale-jurassic" data-category="jurassic">
+        <img src="IMG/icono3.png" alt="Jurassic" />
+        <div class="overlay">
+          <h3>JURASSIC PARK</h3>
+          <p>“Sobrevive… o conviértete en historia.”</p>
+        </div>
+      </div>
+
+      <div class="card contain marvel scale-marvel" data-category="marvel">
+        <img src="IMG/icono4.png" alt="Marvel" />
+        <div class="overlay">
+          <h3>MARVEL</h3>
+          <p>“En un mundo de Vengadores”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ===== GALERÍA ===== -->
+<div class="gallery-modal" id="galleryModal">
+  <div class="gallery-backdrop"></div>
+
+  <div class="gallery-window" id="galleryWindow">
+    <button class="gallery-close" id="galleryClose">✕</button>
+
+    <div class="gallery-head">
+      <h2 id="galleryTitle"></h2>
+      <p id="gallerySubtitle"></p>
+    </div>
+
+    <div class="coverflow">
+      <button class="nav-arrow left" id="prevBtn">‹</button>
+
+      <div class="slides">
+        <div class="slide"><img></div>
+        <div class="slide"><img></div>
+        <div class="slide active"><img></div>
+        <div class="slide"><img></div>
+        <div class="slide"><img></div>
+      </div>
+
+      <button class="nav-arrow right" id="nextBtn">›</button>
+    </div>
+<div class="product-panel">
+  <div class="product-left"> <h3 id="productName"></h3>
+    <p id="productDesc"></p>
+  </div>
+
+  <div class="product-right"> <div class="price" id="productPrice"></div>
+    <div class="actions"> <button id="btnBackGallery" class="btn-ghost">REGRESAR</button>
+      <button id="btnBuy" class="btn-solid">COMPRAR AHORA</button>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="checkout-modal" id="checkoutModal">
+  <div class="checkout-window">
+    <!-- Header -->
+    <div class="checkout-header">
+      <h3>Finalizar Compra</h3>
+      <button class="checkout-close" id="btnCloseCheckout">×</button>
+    </div>
+    
+    <!-- Formulario -->
+    <div class="checkout-body" id="checkoutForm">
+      <!-- Producto seleccionado -->
+      <div class="selected-product">
+        <img id="selectedProductImg" src="" alt="">
+        <div class="selected-product-info">
+          <h4 id="selectedProductTitle">Producto</h4>
+          <p id="selectedProductPrice">L 0</p>
+        </div>
+      </div>
+      
+      <!-- Inputs -->
+      <div class="input-group">
+        <label>Nombre Completo <i>👤</i></label>
+        <div class="input-wrapper">
+          
+          <input type="text" id="inputName" placeholder="Tu nombre completo">
+        </div>
+        <span class="error-message" id="errorName">Ingresa al menos 3 caracteres</span>
+      </div>
+      
+      <div class="input-group">
+        <label>Correo Electrónico <i>✉</i></label>
+        <div class="input-wrapper">
+          
+          <input type="email" id="inputEmail" placeholder="tu@email.com">
+        </div>
+        <span class="error-message" id="errorEmail">Ingresa un email válido</span>
+      </div>
+      
+      <div class="input-group">
+        <label>Número de Tarjeta <i>💳</i></label>
+        <div class="input-wrapper">
+          
+          <input type="text" id="inputCard" placeholder="0000 0000 0000 0000  " maxlength="19">
+        </div>
+        <span class="error-message" id="errorCard">Ingresa 16 dígitos válidos</span>
+      </div>
+      
+      <div class="input-row">
+        <div class="input-group">
+          <label>Fecha Expiración  <i>📅</i></label>
+          <div class="input-wrapper">
+           
+            <input type="text" id="inputExpiry" placeholder="MM/YY " maxlength="5">
+          </div>
+          <span class="error-message" id="errorExpiry">Formato: MM/YY</span>
+        </div>
+        <div class="input-group">
+          <label>CVV  <i>🔒</i></label>
+          <div class="input-wrapper">
+           
+            <input type="text" id="inputCvv" placeholder="123" maxlength="3">
+          </div>
+          <span class="error-message" id="errorCvv">3 dígitos requeridos</span>
+        </div>
+      </div>
+      
+      <!-- Resumen -->
+      <div class="checkout-summary">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="selectedProductPrice2">L 0</span>
+        </div>
+        <div class="summary-row">
+          <span>Envío</span>
+          <span>Gratis</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total a Pagar</span>
+          <span id="checkoutTotal">L 0</span>
+        </div>
+      </div>
+      
+      <!-- Botones -->
+      <div class="checkout-actions">
+        <button class="btn-back-checkout" id="btnBack">← Regresar</button>
+        <button class="btn-pay-now" id="btnPay">Pagar Ahora ⚡</button>
+      </div>
+    </div>
+    
+    <!-- Pantalla de Éxito -->
+    <div class="success-screen" id="successScreen">
+      <div class="success-icon">✓</div>
+      <h4>¡Compra Exitosa!</h4>
+      <p id="successMessage">Tu pedido ha sido procesado correctamente.</p>
+      <button class="btn-success" id="btnSuccess">Continuar Comprando</button>
+    </div>
+  </div>
+</div>
+
+</div>
+    </div>
+  </div>
+</div>
+
+<div class="contact-modal" id="contactModal">
+  <div class="contact-window">
+    <button class="contact-close" id="closeContact">✕</button>
+    
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2 class="contact-title">Base de Datos</h2>
+            <p class="contact-subtitle">Información Clasificada</p>
+            
+            <div class="info-item">
+                <span class="info-label">Ubicación:</span>
+                <p>Sector Gotham, Distrito Financiero, Nivel 0-B.</p>
+            </div>
+            
+            <div class="info-item">
+                <span class="info-label">Línea Directa:</span>
+                <p>+504 2200-LEGO / +504 9999-0000</p>
+            </div>
+            
+            <div class="info-item">
+                <span class="info-label">Horario:</span>
+                <p>Lun - Vie: 08:00 - 18:00 | Sáb: 09:00 - 16:00</p>
+            </div>
+        </div>
+
+        <div class="contact-action">
+            <h4 class="footer-title">Canal de Comunicación</h4>
+            <p style="color: #aaa; margin-bottom: 20px; font-size: 0.9rem;">Presiona el botón para redactar un informe encriptado a nuestra central.</p>
+            
+            <a href="mailto:contacto@brickmastergarage.com?subject=Informe%20de%20Agente" class="btn-solid btn-send-mail" style="text-decoration: none; display: block; text-align: center;">
+                ESCRIBIR CORREO ✉
+            </a>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="values-modal" id="valuesModal">
+  <div class="values-window">
+    <div class="window-border"></div>
+    <button class="values-close" id="closeValues">✕</button>
+    
+    <div class="values-tabs">
+      <button class="tab-btn active" data-target="mision">MISIÓN</button>
+      <button class="tab-btn" data-target="vision">VISIÓN</button>
+      <button class="tab-btn" data-target="historia">HISTORIA</button>
+    </div>
+
+    <div class="values-content">
+      <div class="value-pane active" id="mision">
+        <div class="visual-container">
+          <div class="cyber-circle"></div>
+          <svg class="cyber-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L15 8H9L12 2Z" fill="url(#grad-mision)" />
+            <path d="M12 2C12 2 17 6 17 13V19L12 17L7 19V13C7 6 12 2 12 2Z" stroke="white" stroke-width="1.5" />
+            <path class="fire" d="M10 20L12 23L14 20" stroke="#ffea00" stroke-width="2" />
+            <defs>
+              <linearGradient id="grad-mision" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#7000ff" />
+                <stop offset="100%" style="stop-color:#00f2ff" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <h2 class="value-title" data-text="NUESTRA MISIÓN">Nuestra Misión</h2>
+        <p>En BrickMaster Garage, nuestra misión fundamental es liderar la democratización del arte de la construcción modular avanzada, proporcionando a una comunidad global de coleccionistas las herramientas arquitectónicas necesarias para materializar realidades paralelas de alta fidelidad. Nos dedicamos a la curaduría y desarrollo de experiencias técnicas que desafían los límites de la física y la imaginación, fusionando la nostalgia de los bloques tradicionales con las exigencias estéticas y funcionales del futuro neón.</p>
+      </div>
+
+      <div class="value-pane" id="vision">
+        <div class="visual-container">
+          <div class="cyber-circle magenta"></div>
+          <svg class="cyber-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="white" stroke-width="1.5"/>
+            <circle class="pupil" cx="12" cy="12" r="3" fill="url(#grad-vision)" />
+            <defs>
+              <linearGradient id="grad-vision" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#ff004c" />
+                <stop offset="100%" style="stop-color:#ff8c00" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <h2 class="value-title" data-text="NUESTRA VISIÓN">Nuestra Visión</h2>
+        <p>Proyectamos consolidarnos para el año 2030 como la autoridad global definitiva en el ecosistema del coleccionismo premium y el diseño industrial de "Luxury Modular Sets". Nuestra visión es establecer un nuevo estándar de excelencia donde la tecnología de realidad mixta y la sostenibilidad de materiales de alto rendimiento converjan en una plataforma de expresión artística sin precedentes. Buscamos redefinir el concepto de "juego" para convertirlo en una disciplina de construcción legendaria.</p>
+      </div>
+
+      <div class="value-pane" id="historia">
+        <div class="visual-container">
+          <div class="cyber-circle yellow"></div>
+          <svg class="cyber-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="scroll-path" d="M4 19V5C4 3.89543 4.89543 3 6 3H18C19.1046 3 20 3.89543 20 5V19C20 20.1046 19.1046 21 18 21H6C4.89543 21 4 20.1046 4 19Z" stroke="white" stroke-width="1.5"/>
+            <path d="M8 7H16M8 11H16M8 15H13" stroke="url(#grad-historia)" stroke-width="2" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="grad-historia" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#ffea00" />
+                <stop offset="100%" style="stop-color:#ff8c00" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <h2 class="value-title" data-text="NUESTRA HISTORIA">Nuestra Historia</h2>
+        <p>El génesis de nuestra organización se remonta a finales de 2024, en un laboratorio de diseño experimental donde un grupo multidisciplinario de arquitectos y programadores decidió romper el estancamiento del mercado modular tradicional. Lo que inició como una comunidad local de intercambio de piezas raras en un garaje tecnológico, evolucionó rápidamente hacia la creación de BrickMaster Garage en 2026, impulsados por la implementación de efectos de luz inteligentes.</p>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+ <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h4 class="footer-title">BrickMaster</h4>
+            <p class="footer-text">Colecciones exclusivas para constructores legendarios. Llevando el arte de LEGO al siguiente nivel.</p>
+        </div>
+
+        <div class="footer-column">
+            <h4 class="footer-title"> MAS LEGOS </h4>
+            <ul class="footer-links">
+                <li><a href="https://www.lego.com/themes/batman" target="_blank">Mundo Batman</a></li>
+                <li><a href="https://www.lego.com/themes/jurassic-world" target="_blank">Jurassic World</a></li>
+                <li><a href="https://www.lego.com/categories/adults-welcome" target="_blank">Sets para Adultos</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4 class="footer-title">Siguenos</h4>
+            <div class="footer-social">
+                <a href="#" class="social-link">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="#" class="social-link">
+                    <svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+                </a>
+                <a href="#" class="social-link">
+                    <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.86-.6-4.12-1.31a6.34 6.34 0 0 1-2.02-1.77c-.01 2.34.01 4.68-.02 7.01a7.44 7.44 0 0 1-1.15 3.91 7.47 7.47 0 0 1-9.52 2.3 7.41 7.41 0 0 1-3.61-6.19 7.43 7.43 0 0 1 5.91-7.98c.11-.02.22-.03.33-.05v4.17a3.34 3.34 0 0 0-2.3 3.19 3.34 3.34 0 0 0 4.96 3.1c.82-.46 1.34-1.32 1.35-2.26.03-4.14.02-8.28.02-12.42z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 BRICKMASTER GARAGE | DISEÑO NEÓN PARA COLECCIONISTAS</p>
+    </div>
+</footer>
+
+
+
+<script src="JS/script.js?v=1" defer></script>
+
+</body>
+
+
+</html>
