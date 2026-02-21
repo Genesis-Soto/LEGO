@@ -1443,11 +1443,10 @@ body.banner-fire .hero-image img{
   .hero-image{ width:100%; display:block; justify-content:flex-start; }
   .hero-image img{ width:100%; max-width:100%; border-radius:20px; margin-top:6px; }
 
-  /* Secciones generales: asegurar padding lateral mínimo 16px */
-  .categorias, .gallery-window, .checkout-window, .contact-window, .values-window, .product-panel, .main-footer {
-    padding-left:16px !important;
-    padding-right:16px !important;
-  }
+ body {
+  padding-left: 14px;
+  padding-right: 14px;
+}
 
   .categorias{ padding-top:48px; padding-bottom:48px; }
   .categorias h2{ font-size:1.8rem; margin-bottom:32px; }
@@ -1468,8 +1467,8 @@ body.banner-fire .hero-image img{
 
   /* Modales: ancho 90%–95% centrados y con padding interior */
   .gallery-window, .checkout-window, .contact-window, .values-window{
-    width:94% !important;
-    max-width:95% !important;
+    width:92% !important;
+max-width:420px !important;
     margin:0 auto !important;
     padding-left:16px !important;
     padding-right:16px !important;
@@ -1497,4 +1496,11 @@ body.banner-fire .hero-image img{
 
   /* Asegurar centrado visual donde aplique */
   .gallery-modal.active, .checkout-modal.active, .contact-modal.active, .values-modal.active{ align-items:center; justify-content:center; }
+}
+
+.values-window,
+.gallery-window,
+.checkout-window,
+.contact-window {
+  border-radius: 20px;
 }
